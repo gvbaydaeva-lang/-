@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Угадай песню по эмодзи</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="top">
+        <h1>Угадай песню по эмодзи</h1>
+        <p class="subtitle">
+          Узнай легендарные русскоязычные хиты: от классики до современных треков.
+        </p>
+      </header>
+
+      <section id="game-card" class="card">
+        <div class="game-meta">
+          <span id="round-counter" class="badge">Раунд 1/10</span>
+          <span id="timer" class="badge badge-timer" aria-live="polite"
+            >⏱ <span id="timer-value">45</span> с</span>
+          <span id="score-counter" class="badge badge-accent">Очки: 0</span>
+        </div>
+
+        <div id="emoji-hint" class="emoji-hint" aria-live="polite"></div>
+        <p id="round-note" class="round-note"></p>
+
+        <label for="answer-input" class="label">Название песни:</label>
+        <div class="input-row">
+          <input
+            id="answer-input"
+            type="text"
+            autocomplete="off"
+            placeholder="Введите ответ..."
+            maxlength="80"
+          />
+          <button id="check-btn" class="btn btn-primary">Проверить</button>
+        </div>
+
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+
+        <div class="actions">
+          <button id="next-btn" class="btn btn-secondary" disabled>
+            Следующий раунд
+          </button>
+        </div>
+      </section>
+
+      <section id="result-card" class="card hidden">
+        <h2>Игра завершена</h2>
+        <p id="final-score" class="final-score"></p>
+        <p id="final-message" class="final-message"></p>
+        <button id="restart-btn" class="btn btn-primary">Сыграть снова</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
